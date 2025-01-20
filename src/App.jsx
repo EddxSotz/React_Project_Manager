@@ -1,8 +1,12 @@
+import SideBar from "./components/SideBar";
+import AddNewProject from "./components/AddNewProject";
+
 function App() {
   return (
-    <>
-      <h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
-    </>
+    <main className="h-screen w-full flex flex-row">
+      <SideBar />
+      <AddNewProject />
+    </main>
   );
 }
 
