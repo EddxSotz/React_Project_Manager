@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useRef } from "react";
 
-export default function AddNewProject() { 
+export default function AddNewProject({ onSaveProject }) { 
   const projectNameRef = useRef();
   const projectDescriptionRef = useRef();
   const projectDueDateRef = useRef();
@@ -10,6 +10,12 @@ export default function AddNewProject() {
     const projectName = projectNameRef.current.value;
     const projectDescription = projectDescriptionRef.current.value;
     const projectDueDate = projectDueDateRef.current.value;
+
+    onSaveProject({
+      name: projectName,
+      description: projectDescription,
+      dueDate: projectDueDate,
+    })
   }
 
   return (
