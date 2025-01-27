@@ -15,7 +15,7 @@ export default function AddNewProject({ onSaveProject }) {
       name: projectName,
       description: projectDescription,
       dueDate: projectDueDate,
-    })
+    })    
   }
 
   return (
