@@ -28,6 +28,7 @@ export default function AddNewProject({ onSaveProject }) {
           name="project-name"
           className="border-2 border-gray-300 rounded-md p-2"
           ref={projectNameRef}
+          required
         />
         <label htmlFor="project-description">Project Description</label>
         <textarea
@@ -43,6 +44,7 @@ export default function AddNewProject({ onSaveProject }) {
           name="project-due-date"
           className="border-2 border-gray-300 rounded-md p-2"
           ref={projectDueDateRef}
+          required
         />
         <div className="flex flex-row gap-4 mt-4">
           <button className="bg-blue-500 text-white p-2 rounded hover:bg-blue-800">

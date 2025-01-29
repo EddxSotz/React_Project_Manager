@@ -10,6 +10,10 @@ function App() {
   const handleAddProjectView = () => {
     setProjectState(true);
   }
+
+  const handleViewProjects = () => {
+    setProjectState(false);
+  }
   
   const handleSaveProject = (projectData) => {
     setProjects([...projects, projectData]);
@@ -18,13 +22,13 @@ function App() {
   
   return (
     <main className="h-screen w-full flex flex-row">
-      <SideBar onClickAddProject={handleAddProjectView}/>
+      <SideBar onClickAddProject={handleAddProjectView} onClickViewProjects={handleViewProjects}/>
       {projectState ? (
         <AddNewProject onSaveProject={handleSaveProject}/>
       ) : (
         <div className="w-2/3 max-w-xl mx-auto px-4 py-12">
           <div className="flex flex-row justify-between items-center">
-            <h1 className="text-2xl font-bold">Projects</h1>     
+            <h1 className="text-2xl font-bold">Your Projects</h1>     
           </div>
           <div className="mt-8">
             {projects.map((project, index) => (
