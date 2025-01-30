@@ -20,6 +20,12 @@ function App() {
     setProjectState(false);    
   }
   
+  const handleDeleteProject = (projectData) => {
+    const updatedProjects = projects.filter((project) => project.name !== projectData.name);
+    setProjects(updatedProjects);
+  }
+
+
   return (
     <main className="h-screen w-full flex flex-row">
       <SideBar onClickAddProject={handleAddProjectView} onClickViewProjects={handleViewProjects}/>
@@ -36,6 +42,9 @@ function App() {
                 <h2 className="text-lg font-bold">{project.name}</h2>
                 <p className="text-sm text-gray-500">{project.description}</p>
                 <p className="text-sm text-gray-500">Due Date: {project.dueDate}</p>
+                <button className="bg-red-500 text-white p-2 mt-6 mb-6 rounded hover:bg-red-800" onClick={() => handleDeleteProject(project)}>
+                  Delete Project
+                </button>
               </div>
             ))}
           </div>
